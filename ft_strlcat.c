@@ -30,24 +30,24 @@ size_t	ft_strlcat(
 		src_length ++;
 	if (dstsize <= dst_length)
 		return (src_length + dstsize);
-	while (src[i] && dst_length + 1 < dstsize)
+	while (src[i] && dst_length + 1 + i < dstsize)
 	{
-		dst[dst_length] = src[i];
-		dst_length ++;
+		dst[dst_length + i] = src[i];
 		i ++;
 	}
-	if (dst_length < dstsize)
-		dst[dst_length] = '\0';
+	dst[dst_length + i] = '\0';
 	return (src_length + dst_length);
 }
 
-/* int main()
-{
-	char dst[10] = "Hi";
-	printf("%zu | %s\n", ft_strlcat(dst, "There", 10), dst);
-	char dst2[5] = "Hi";
-	printf("%zu | %s\n", ft_strlcat(dst2, "There", 4), dst2);
-	// char dst3[5] = "Hi";
-	// printf("%zu | %s\n", strlcat(dst3, "There", 4), dst3);
-	return 0;
-} */
+// int main()
+// {
+// 	char dst[10] = "Hi";
+// 	printf("%zu | %s\n", ft_strlcat(dst, "Fatemeh", 10), dst);
+// 	char dst2[6] = "ABC";
+// 	printf("%zu | %s\n", ft_strlcat(dst2, "XYZXYZ", 6), dst2);
+// 	char dst3[6] = "ABC";
+// 	printf("%zu | %s\n", strlcat(dst3, "XYZXYZ", 6), dst3);
+// 	char dst4[10] = "Hi";
+// 	printf("%zu | %s\n", strlcat(dst4, "Fatemeh", 10), dst);
+// 	return 0;
+// }
