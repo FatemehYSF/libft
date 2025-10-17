@@ -29,9 +29,9 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	else
 		return (s1[i] - s2[i]);
 }
-int main()
-{
-	printf("%d\n" , ft_strncmp("Fatemeh", "Fateh" , 4));
-	printf("%d" , ft_strncmp("Fatemeh", "Fateh" , 5));
-return 0;
-}
+// int main()
+// {
+// 	printf("%d\n" , ft_strncmp("Fatemeh", "Fateh" , 4));
+// 	printf("%d" , ft_strncmp("Fatemeh", "Fateh" , 5));
+// return 0;
+// }
