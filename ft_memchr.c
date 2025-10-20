@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fyousefi <fyousefi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/10/10 11:12:41 by fyousefi         ###   ########.fr       */
+/*   Updated: 2025/10/20 12:18:52 by fyousefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-int main()
+/* int main()
 {
 	char mem[] = {'F', 'a', 't', 'e', 'm', 'e', 'h', '\0', 'x'};
 	char *s = ft_memchr(mem, 'e', 9);
@@ -36,4 +36,4 @@ int main()
 		printf("Found: %c\n", *s);
 	printf("%s" , s);
 	return 0;
-}
+} */

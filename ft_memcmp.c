@@ -1,45 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fyousefi <fyousefi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/10/20 12:18:36 by fyousefi         ###   ########.fr       */
+/*   Updated: 2025/10/20 12:39:20 by fyousefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_memcmp(const	void *s1, const	void *s2, size_t n)
 {
-	int	i;
-	int	j;
+	unsigned char	*str1;
+	unsigned char	*str2;
+	int				i;
 
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
 	i = 0;
-	j = -1;
-	while (s[i])
+	if (n == 0)
+		return (0);
+	while (str1[i] != '\0' && str2[i] != '\0' && i < n && (str1[i] == str2[i]))
 	{
-		if (s[i] == c)
-			j = i;
 		i ++;
 	}
-	if (j >= 0)
-		return ((char *)&s[j]);
-	else if ((char)c == '\0')
-		return ((char *)&s[i]);
+	if (i == n)
+		return (0);
 	else
-		return (NULL);
+		return (str1[i] - str2[i]);
 }
 
-// int main()
-// {
-// 	char s[] = "Fatemeh";
-// 	printf("%s\n", ft_strrchr(s, 'e'));
-// printf("%s\n", ft_strrchr(s, 'F'));
-// printf("%s\n", ft_strrchr(s, 'z'));
-// printf("%s\n", ft_strrchr(s, '\0'));
-// 	return 0;
-// }
+/* int main(void) {
+    char a[] = {0x01, 0x02, 0x03};
+    char b[] = {0x01, 0x02, 0x03};
+
+    int result = ft_memcmp(a, b, sizeof(a));
+
+    if (result < 0)
+        printf("a < b\n");
+    else if (result > 0)
+        printf("a > b\n");
+    else
+        printf("a = b\n");
+
+    return 0;
+}
+ */
