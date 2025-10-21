@@ -15,9 +15,9 @@
 size_t	ft_strlcat(
 	char *restrict dst, const char *restrict src, size_t dstsize)
 {
-	int	dst_length;
-	int	src_length;
-	int	i;
+	size_t	dst_length;
+	size_t	src_length;
+	size_t	i;
 
 	dst_length = 0;
 	src_length = 0;
