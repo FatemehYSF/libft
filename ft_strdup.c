@@ -31,3 +31,11 @@ char	*ft_strdup(const char *s1)
 	str_cpy[i]= '\0';
 	return (str_cpy);
 }
+/* int main()
+{
+	char *s = "Fatemeh";
+	char *s_cpy;
+
+	printf("%s", ft_strdup(s));
+	return 0;
+} */
