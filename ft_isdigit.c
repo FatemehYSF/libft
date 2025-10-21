@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-int	ft_isdigit(int n)
+int	ft_isdigit(int c)
 {
-	return (n >= '0' && n <= '9');
+	return (c >= '0' && c <= '9');
 }
 
 /* int main(void)

@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
+#include "libft.h"
 
 static void	memmove_forward(
 	unsigned char *d, const unsigned char *s, size_t len
