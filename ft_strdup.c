@@ -1,49 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fyousefi <fyousefi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/10/10 11:12:41 by fyousefi         ###   ########.fr       */
+/*   Updated: 2025/10/10 13:47:03 by fyousefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_strdup(const char *s1)
 {
-	unsigned char	*mem;
-	size_t i;
+	char	*str_cpy;
+	size_t		size;
+	size_t		i;
 
+	size = ft_strlen(s1);
 	i = 0;
-	if (count == 0 || size == 0)
-		mem = malloc (1);
-	else
-		mem = malloc(count * size);
-	if (mem == NULL)
+	str_cpy = malloc ((size + 1) * sizeof(char));
+	if (str_cpy == NULL)
 		return (NULL);
-	while (i < (count * size))
+	while(i < size)
 	{
-		mem[i] = 0;
+		str_cpy[i] = s1[i];
 		i ++;
 	}
-	return (mem);
+	str_cpy[i]= '\0';
+	return (str_cpy);
 }
-/* int main(void)
-{
-    int *arr = ft_calloc(5, sizeof(int));
-    if (!arr)
-    {
-        printf("Allocation failed!\n");
-        return 1;
-    }
-    for (size_t i = 0; i < 5; i++)
-        printf("%d ", arr[i]);
-    printf("\n");
-
-    free(arr);
-
-    return 0;
-} */
