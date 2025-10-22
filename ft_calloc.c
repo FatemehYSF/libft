@@ -6,7 +6,7 @@
 /*   By: fyousefi <fyousefi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/10/22 16:42:04 by fyousefi         ###   ########.fr       */
+/*   Updated: 2025/10/22 18:10:37 by fyousefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_calloc(size_t count, size_t size)
 
 	i = 0;
 	if (count == 0 || size == 0)
-		mem = malloc(1);
+		mem = malloc(0);
 	else
 		mem = malloc(count * size);
 	if (mem == NULL)
