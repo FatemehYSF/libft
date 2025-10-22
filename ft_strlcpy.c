@@ -6,7 +6,7 @@
 /*   By: fyousefi <fyousefi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/10/15 11:10:53 by fyousefi         ###   ########.fr       */
+/*   Updated: 2025/10/22 12:05:09 by fyousefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	src_size;
-	size_t		i;
+	size_t	i;
 
 	i = 0;
 	src_size = 0;
