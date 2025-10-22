@@ -6,7 +6,7 @@
 /*   By: fyousefi <fyousefi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/10/20 12:18:36 by fyousefi         ###   ########.fr       */
+/*   Updated: 2025/10/22 17:14:09 by fyousefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ char	*ft_strrchr(const char *s, int c)
 	j = -1;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == (unsigned char)c)
 			j = i;
 		i ++;
 	}
 	if (j >= 0)
 		return ((char *)&s[j]);
-	else if ((char)c == '\0')
+	else if ((unsigned char)c == '\0')
 		return ((char *)&s[i]);
 	else
 		return (NULL);

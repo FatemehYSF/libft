@@ -1,38 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fyousefi <fyousefi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/10/22 16:56:42 by fyousefi         ###   ########.fr       */
+/*   Updated: 2025/10/22 14:56:00 by fyousefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
-{
-	size_t			i;
-	unsigned char	*str;
-
-	i = 0;
-	str = (unsigned char *)s;
-	while (i < n)
-	{
-		if (str[i] == (unsigned char)c)
-			return ((void *)&str[i]);
-		i ++;
-	}
-	return (NULL);
-}
-/* int main()
-{
-	char mem[] = {'F', 'a', 't', 'e', 'm', 'e', 'h', '\0', 'x'};
-	char *s = ft_memchr(mem, 'e', 9);
-	if (s)
-		printf("Found: %c\n", *s);
-	printf("%s" , s);
-	return 0;
-} */
+// char	*ft_substr(char const *s, unsigned int start, size_t len)
+// {
+// 	char const 
+// }

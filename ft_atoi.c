@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fyousefi <fyousefi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/10/10 13:47:03 by fyousefi         ###   ########.fr       */
+/*   Updated: 2025/10/22 12:12:51 by fyousefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	ft_atoi(const char *nptr)
     int i = 0;
     while (tests[i])
     {
-        printf("Input: \"%s\"  →  Output: %d\n", tests[i], ft_atoi(tests[i]));
+        printf("Input: \"%s\"  , Output: %d\n", tests[i], ft_atoi(tests[i]));
         i++;
     }
 
