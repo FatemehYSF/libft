@@ -23,11 +23,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	s_len = ft_strlen(s);
 	if (start >= s_len)
-		return (malloc(1));
+		return (malloc(0));
 	if (len > s_len - start)
 		len = s_len - start;
 	substr = (char *)malloc(len + 1);
-	if (!substr)
+	if (substr == NULL)
 		return (NULL);
 	while (i < len)
 	{
