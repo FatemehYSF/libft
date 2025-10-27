@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fyousefi <fyousefi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/10/22 12:05:31 by fyousefi         ###   ########.fr       */
+/*   Updated: 2025/10/27 11:23:40 by fyousefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*temp;
 
 	if (!s1 || !s2)
-		return NULL;
-	join_len = ft_strlen(s1) + ft_strlen(s2);;
-
+		return (NULL);
+	join_len = ft_strlen(s1) + ft_strlen(s2);
 	join_str = (char *)malloc(join_len + 1);
 	if (!join_str)
 		return (NULL);

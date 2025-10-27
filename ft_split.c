@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fyousefi <fyousefi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/10/22 17:12:40 by fyousefi         ###   ########.fr       */
+/*   Updated: 2025/10/27 11:26:28 by fyousefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ size_t	count_word(const char *s, char c)
 	}
 	return (word_count);
 }
+
 char	*copy_word(const char *s, size_t start, size_t end)
 {
 	char	*word;

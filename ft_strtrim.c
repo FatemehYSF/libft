@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fyousefi <fyousefi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/10/22 17:14:09 by fyousefi         ###   ########.fr       */
+/*   Updated: 2025/10/27 11:22:37 by fyousefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		end--;
 	trim_str = (char *)malloc(end - start + 1);
 	if (!trim_str)
-		return(NULL);
+		return (NULL);
 	i = 0;
 	while (start < end)
 	{

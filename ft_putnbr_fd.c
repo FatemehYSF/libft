@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fyousefi <fyousefi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/10/10 11:12:41 by fyousefi         ###   ########.fr       */
+/*   Updated: 2025/10/27 11:47:46 by fyousefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char *str_number;
-	char *ptr;
+	char	*str_number;
+	char	*ptr;
+
 	str_number = ft_itoa(n);
 	if (!str_number)
-		return;
+		return ;
 	ptr = str_number;
 	while (*str_number)
 	{

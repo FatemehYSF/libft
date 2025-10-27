@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fyousefi <fyousefi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/10/22 16:56:42 by fyousefi         ###   ########.fr       */
+/*   Updated: 2025/10/27 11:47:31 by fyousefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int count_digits(int n)
+int	count_digits(int n)
 {
-	int count = 0;
+	int	count;
 
+	count = 0;
 	if (n <= 0)
 		count++;
 	while (n != 0)
 	{
 		n /= 10;
-		count++;
+		count ++;
 	}
-	return count;
+	return (count);
 }
+
 char	*ft_itoa(int n)
 {
 	int				count;
