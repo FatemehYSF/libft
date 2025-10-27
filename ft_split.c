@@ -6,13 +6,13 @@
 /*   By: fyousefi <fyousefi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/10/27 11:26:28 by fyousefi         ###   ########.fr       */
+/*   Updated: 2025/10/27 17:50:21 by fyousefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	count_word(const char *s, char c)
+static size_t	count_word(const char *s, char c)
 {
 	size_t	i;
 	size_t	word_count;
@@ -33,7 +33,7 @@ size_t	count_word(const char *s, char c)
 	return (word_count);
 }
 
-char	*copy_word(const char *s, size_t start, size_t end)
+static char	*copy_word(const char *s, size_t start, size_t end)
 {
 	char	*word;
 	size_t	length;
@@ -54,6 +54,35 @@ char	*copy_word(const char *s, size_t start, size_t end)
 	return (word);
 }
 
+static void	free_split(char **split, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		free(split[i]);
+		i++;
+	}
+	free(split);
+}
+
+/**
+ * @brief Splits a string into an array of substrings using a delimiter.
+ * 
+ * The ft_split function divides the string `s` into substrings separated
+ * by the character `c`. Each substring is dynamically allocated and
+ * stored in an array of strings, terminated by a NULL pointer.
+ * 
+ * @param s Pointer to the null-terminated string to split.
+ * @param c The delimiter character used to separate words.
+ * 
+ * @return A NULL-terminated array of strings (substrings), or NULL if
+ *         memory allocation fails or if `s` is NULL.
+ * 
+ * @note The caller is responsible for freeing the memory allocated for
+ *       the array and each substring.
+ */
 char	**ft_split(char const *s, char c)
 {
 	char	**str_split;
@@ -76,7 +105,15 @@ char	**ft_split(char const *s, char c)
 		while (s[i] && s[i] != c)
 			i++;
 		if (i > start)
-			str_split[word_i++] = copy_word(s, start, i);
+		{
+			str_split[word_i] = copy_word(s, start, i);
+			if (!str_split[word_i])
+			{
+				free_split(str_split, word_i);
+				return (NULL);
+			}
+			word_i++;
+		}
 	}
 	str_split[word_i] = NULL;
 	return (str_split);
@@ -91,4 +128,4 @@ char	**ft_split(char const *s, char c)
 	for (int i = 0; arr[i] != NULL; i++)
     	free(arr[i]);
 	return (0);
-} */
+}  */

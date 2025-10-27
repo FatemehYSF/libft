@@ -6,21 +6,25 @@
 /*   By: fyousefi <fyousefi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/10/22 17:17:58 by fyousefi         ###   ########.fr       */
+/*   Updated: 2025/10/27 15:39:52 by fyousefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 /**
- * @brief The description of this function
+ * @brief Sets a block of memory to zero.
  * 
- * @param s void * .... explain whatever you want
- * @param n size_t the length of *s
+ * Sets the first `n` bytes of the memory pointed to by `s` to `0`.
  * 
- * @warning Be carefull for these case input of 0 will segfault
+ *
+ * @param s Pointer to the memory area to be zeroed.
+ * @param n Number of bytes to set to zero.
+ * 
+ * @warning  Make sure `s` points to a valid memory 
+ * 				region with at least `n` bytes.
  * 
  * @return void
+ * 
  */
 void	ft_bzero(void *s, size_t n)
 {

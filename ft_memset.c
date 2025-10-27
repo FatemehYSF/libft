@@ -6,12 +6,27 @@
 /*   By: fyousefi <fyousefi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/10/10 11:12:41 by fyousefi         ###   ########.fr       */
+/*   Updated: 2025/10/27 14:45:14 by fyousefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Fills a block of memory with a specified byte value.
+ * 
+ * The ft_memset function sets the first `n` bytes of the memory area
+ * pointed to by `b` to the byte value `c` (converted to unsigned char).
+ * 
+ * @param b Pointer to the memory area to fill.
+ * @param c The byte value to set (converted to unsigned char).
+ * @param n Number of bytes to set.
+ * 
+ * @return Returns a pointer to the memory area `b`.
+ * 
+ * @note The function works on raw memory; it does not check for
+ *       null-terminated strings.
+ */
 void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*p;

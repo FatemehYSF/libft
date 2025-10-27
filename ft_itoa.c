@@ -6,13 +6,22 @@
 /*   By: fyousefi <fyousefi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/10/27 11:47:31 by fyousefi         ###   ########.fr       */
+/*   Updated: 2025/10/27 17:37:15 by fyousefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	count_digits(int n)
+/**
+ * @brief Counts the number of digits needed to represent an integer.
+ * 
+ * The count_digits function calculates how many characters are needed
+ * to represent the integer `n` as a string, including the sign for
+ * negative numbers and the '0' character for zero.
+ * 
+ * @param n The integer whose digits are counted.
+ * @return int The number of characters required to represent `n` as a string.
+ */
+static int	count_digits(int n)
 {
 	int	count;
 
@@ -27,6 +36,28 @@ int	count_digits(int n)
 	return (count);
 }
 
+static void	fill_num(char *array, unsigned int number, int *count)
+{
+	while (number > 0)
+	{
+		array[--(*count)] = (number % 10) + '0';
+		number /= 10;
+	}
+}
+
+/**
+ * @brief Converts an integer to a null-terminated string.
+ * 
+ * The ft_itoa function allocates and returns a string representing
+ * the integer `n` in decimal (base 10). The returned string is
+ * null-terminated and must be freed by the caller when no longer needed.
+ * 
+ * @param n The integer to convert.
+ * @return char*  pointer to the allocated string representing `n`, or NULL
+ *         if memory allocation fails.
+ * @note - Handles zero and negative integers correctly.
+ * - The caller is responsible for freeing the returned string.
+ */
 char	*ft_itoa(int n)
 {
 	int				count;
@@ -35,6 +66,8 @@ char	*ft_itoa(int n)
 
 	count = count_digits(n);
 	array = malloc (sizeof(char) * (count + 1));
+	if (!array)
+		return (NULL);
 	array[count] = '\0';
 	if (n == 0)
 	{
@@ -48,11 +81,7 @@ char	*ft_itoa(int n)
 	}
 	else
 		number = n;
-	while (number > 0)
-	{
-		array[--count] = (number % 10) + '0';
-		number /= 10;
-	}
+	fill_num(array, number, &count);
 	return (array);
 }
 /* int main()

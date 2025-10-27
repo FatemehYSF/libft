@@ -6,12 +6,22 @@
 /*   By: fyousefi <fyousefi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/10/15 10:23:24 by fyousefi         ###   ########.fr       */
+/*   Updated: 2025/10/27 15:39:37 by fyousefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Copies memory forwards (helper function for ft_memmove).
+ * 
+ * Copies `len` bytes from `s` to `d` in ascending order.
+ * Used when the destination is before the source in memory.
+ * 
+ * @param d Destination pointer.
+ * @param s Source pointer.
+ * @param len Number of bytes to copy.
+ */
 static void	memmove_forward(
 	unsigned char *d, const unsigned char *s, size_t len
 )
@@ -20,6 +30,16 @@ static void	memmove_forward(
 		*d++ = *s++;
 }
 
+/**
+ * @brief Copies memory backwards (helper function for ft_memmove).
+ * 
+ * Copies `len` bytes from `s` to `d` in descending order.
+ * Used when the destination is after the source in memory.
+ * 
+ * @param d Destination pointer.
+ * @param s Source pointer.
+ * @param len Number of bytes to copy.
+ */
 static void	memmove_backward(
 	unsigned char *d, const unsigned char *s, size_t len)
 {
@@ -29,6 +49,24 @@ static void	memmove_backward(
 		*d-- = *s--;
 }
 
+/**
+ * @brief Copies a block of memory, safely handling overlapping regions.
+ * 
+ * The ft_memmove function copies `len` bytes from the memory area `src`
+ * to the memory area `dst`. Unlike ft_memcpy, it correctly handles
+ * overlapping source and destination regions by determining the copy
+ * direction.
+ * 
+ * @param dst Pointer to the destination memory area.
+ * @param src Pointer to the source memory area.
+ * @param len Number of bytes to copy.
+ * 
+ * @return Returns a pointer to the destination memory area `dst`.
+ * 
+ * @note The function automatically chooses whether to copy bytes
+ *       forwards or backwards depending on the relative positions
+ *       of `src` and `dst` to prevent data corruption.
+ */
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	unsigned char		*d;

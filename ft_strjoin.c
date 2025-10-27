@@ -6,12 +6,27 @@
 /*   By: fyousefi <fyousefi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/10/27 11:23:40 by fyousefi         ###   ########.fr       */
+/*   Updated: 2025/10/27 15:04:56 by fyousefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Concatenates two strings into a newly allocated string.
+ * 
+ * The ft_strjoin function allocates memory for a new string that
+ * contains the contents of `s1` followed by the contents of `s2`.
+ * The resulting string is null-terminated and must be freed by the caller.
+ * 
+ * @param s1 Pointer to the first null-terminated string.
+ * @param s2 Pointer to the second null-terminated string.
+ * 
+ * @return Pointer to the newly allocated concatenated string, or NULL
+ *         if memory allocation fails or if `s1` or `s2` is NULL.
+ * 
+ * @note The original strings `s1` and `s2` are not modified.
+ */
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*join_str;
