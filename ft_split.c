@@ -6,7 +6,7 @@
 /*   By: fyousefi <fyousefi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/10/27 17:50:21 by fyousefi         ###   ########.fr       */
+/*   Updated: 2025/10/27 18:36:44 by fyousefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,34 @@ static void	free_split(char **split, size_t n)
 	}
 	free(split);
 }
+static char	**add_word(char **str_split, const char *s, char c)
+{
+	size_t	i;
+	size_t	start;
+	size_t	word_i;
+	char	*word;
+	
+	i = 0;
+	word_i = 0;
+	while (s[i])
+	{
+		while (s[i] == c)
+			i++;
+		start = i;
+		while (s[i] && s[i] != c)
+			i++;
+		if (i > start)
+		{
+			word = copy_word(s, start, i);
+			if (!word)
+				return (free_split(str_split, word_i), NULL);
+			str_split[word_i] = word;
+			word_i++;
+		}
+	}
+	str_split[word_i] = NULL;
+	return (str_split);
+}
 
 /**
  * @brief Splits a string into an array of substrings using a delimiter.
@@ -86,39 +114,16 @@ static void	free_split(char **split, size_t n)
 char	**ft_split(char const *s, char c)
 {
 	char	**str_split;
-	size_t	i;
-	size_t	start;
-	size_t	word_i;
-
+	
 	if (!s)
 		return (NULL);
 	str_split = malloc(sizeof(char *) * (count_word(s, c) + 1));
 	if (!str_split)
 		return (NULL);
-	i = 0;
-	word_i = 0;
-	while (s[i])
-	{
-		while (s[i] == c)
-			i++;
-		start = i;
-		while (s[i] && s[i] != c)
-			i++;
-		if (i > start)
-		{
-			str_split[word_i] = copy_word(s, start, i);
-			if (!str_split[word_i])
-			{
-				free_split(str_split, word_i);
-				return (NULL);
-			}
-			word_i++;
-		}
-	}
-	str_split[word_i] = NULL;
+	str_split = add_word(str_split, s, c);
 	return (str_split);
 }
-/* int main()
+int main()
 {
 	const char *s = "_Hi_Fatemeh__";
 	char **arr = ft_split(s, '_');
@@ -128,4 +133,4 @@ char	**ft_split(char const *s, char c)
 	for (int i = 0; arr[i] != NULL; i++)
     	free(arr[i]);
 	return (0);
-}  */
+} 
