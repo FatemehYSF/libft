@@ -6,11 +6,12 @@
 /*   By: fyousefi <fyousefi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/10/27 15:38:08 by fyousefi         ###   ########.fr       */
+/*   Updated: 2025/10/28 11:01:03 by fyousefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "stdio.h"
 /**
  * @brief Allocates memory for an array and initializes it to zero.
  * 
@@ -34,31 +35,22 @@
  */
 void	*ft_calloc(size_t count, size_t size)
 {
-	unsigned char	*mem;
-	size_t			i;
-	size_t			total;
+	int		*mem;
+	size_t	i;
 
-	i = 0;
-	total = count * size;
-	if (total / size != count)
+	if (size != 0 && count > __SIZE_MAX__ / size)
 		return (NULL);
-	if (count == 0 || size == 0)
-		mem = malloc(0);
-	else
-		mem = malloc(count * size);
-	if (mem == NULL)
+	i = count * size;
+	mem = malloc(i);
+	if (!mem)
 		return (NULL);
-	while (i < (count * size))
-	{
-		mem[i] = 0;
-		i ++;
-	}
+	if (i != 0)
+		ft_memset(mem, 0, i);
 	return (mem);
 }
-
 /* int main(void)
 {
-    int *arr = ft_calloc(__INT_MAX__, __INT_MAX__);
+    int *arr = ft_calloc(5, sizeof(int));
     if (!arr)
     {
         printf("Allocation failed!\n");

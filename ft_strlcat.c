@@ -6,7 +6,7 @@
 /*   By: fyousefi <fyousefi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/10/27 15:04:53 by fyousefi         ###   ########.fr       */
+/*   Updated: 2025/10/28 10:25:57 by fyousefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,7 @@
  * @note The function guarantees null-termination if `dstsize` is greater than 0.
  *       Behavior is undefined if `dst` and `src` overlap.
  */
-size_t	ft_strlcat(
-	char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	dst_length;
 	size_t	src_length;
