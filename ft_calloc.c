@@ -6,7 +6,7 @@
 /*   By: fyousefi <fyousefi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/10/28 11:01:03 by fyousefi         ###   ########.fr       */
+/*   Updated: 2025/10/28 11:04:27 by fyousefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,16 @@
  */
 void	*ft_calloc(size_t count, size_t size)
 {
-	int		*mem;
-	size_t	i;
+	void	*mem;
+	size_t	total;
 
-	if (size != 0 && count > __SIZE_MAX__ / size)
+	if (size && count > __SIZE_MAX__ / size)
 		return (NULL);
-	i = count * size;
-	mem = malloc(i);
+	total = count * size;
+	mem = malloc(total);
 	if (!mem)
 		return (NULL);
-	if (i != 0)
-		ft_memset(mem, 0, i);
+	ft_memset(mem, 0, total);
 	return (mem);
 }
 /* int main(void)
