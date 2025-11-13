@@ -6,13 +6,13 @@
 /*   By: fyousefi <fyousefi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/18 13:37:42 by kube              #+#    #+#             */
-/*   Updated: 2025/10/27 16:35:17 by fyousefi         ###   ########.fr       */
+/*   Updated: 2025/10/28 16:14:46 by fyousefi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isspace(int c)
+static int	ft_isspace(int c)
 {
 	return ((c >= 9 && c <= 13) || c == ' ');
 }
